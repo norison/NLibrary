@@ -1,20 +1,25 @@
 using FastEndpoints;
-using Microsoft.EntityFrameworkCore;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using NLibrary.Persistence;
-using NLibrary.Persistence.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddFastEndpoints();
 builder.Services.AddPersistence(builder.Configuration);
 
+builder.Services
+    .AddHealthChecks()
+    .AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")!);
+
 var app = builder.Build();
 
-await using (var scope = app.Services.CreateAsyncScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<NLibraryDbContext>();
-    await dbContext.Database.MigrateAsync();
-}
+app.UseHealthChecks(
+    "/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
 
 app.UseDefaultExceptionHandler();
 app.UseFastEndpoints(
