@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLibrary.Api", "NLibrary.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLibrary.Persistence", "NLibrary.Persistence\NLibrary.Persistence.csproj", "{2B5183F6-D059-4853-B65B-E15368754EE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLibrary.Migration", "NLibrary.Migration\NLibrary.Migration.csproj", "{8A952810-EE04-4D82-A2B7-25E70B0EB947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{2B5183F6-D059-4853-B65B-E15368754EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B5183F6-D059-4853-B65B-E15368754EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B5183F6-D059-4853-B65B-E15368754EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A952810-EE04-4D82-A2B7-25E70B0EB947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A952810-EE04-4D82-A2B7-25E70B0EB947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A952810-EE04-4D82-A2B7-25E70B0EB947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A952810-EE04-4D82-A2B7-25E70B0EB947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
