@@ -1,0 +1,51 @@
+version: '3.1'
+
+services:
+  nlibrary:
+    container_name: nlibrary-api
+    build:
+      context: /src
+      dockerfile: Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=NLibrary;User Id=sa;Password=!@#$%A1;TrustServerCertificate=True
+    depends_on:
+      mssql:
+        condition: service_healthy
+    ports:
+      - "5000:80"
+    networks:
+      - nlibrary_network
+  mssql:
+    container_name: nlibrary-mssql
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=!@#$%A1
+    ports:
+      - "1433:1433"
+    networks:
+      - nlibrary_network
+    volumes:
+      - nlibrary_mssq_volume:/var/opt/mssql
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "/opt/mssql-tools/bin/sqlcmd",
+          "-U",
+          "sa",
+          "-P",
+          "Administrator1337!",
+          "-Q",
+          "SELECT 1"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+networks:
+  nlibrary_network:
+
+
+volumes:
+  nlibrary_mssq_volume:

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLibrary.Api", "NLibrary.Api\NLibrary.Api.csproj", "{D30A1945-B1CC-4268-AED3-DAB80C481F89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLibrary.Persistence", "NLibrary.Persistence\NLibrary.Persistence.csproj", "{2B5183F6-D059-4853-B65B-E15368754EE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D30A1945-B1CC-4268-AED3-DAB80C481F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30A1945-B1CC-4268-AED3-DAB80C481F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30A1945-B1CC-4268-AED3-DAB80C481F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30A1945-B1CC-4268-AED3-DAB80C481F89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5183F6-D059-4853-B65B-E15368754EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5183F6-D059-4853-B65B-E15368754EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5183F6-D059-4853-B65B-E15368754EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5183F6-D059-4853-B65B-E15368754EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
